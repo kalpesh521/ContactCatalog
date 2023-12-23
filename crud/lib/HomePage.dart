@@ -19,16 +19,23 @@ class HomePageState extends State<HomePage> {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text(
-            'Contact List',
-            style: TextStyle(color: Colors.white, fontFamily: 'Open Sans'),
+          title: Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Image.asset(
+                  'assets/icons/phone-call.png',
+                  width: 40,
+                  height: 40,
+                ),
+              ),
+              Text(
+                'ContactCatalog',
+                style: TextStyle(color: Colors.white, fontFamily: 'Open Sans'),
+              ),
+            ],
           ),
-          backgroundColor: Color.fromRGBO(
-            94,
-            7,
-            110,
-            0.863,
-          ),
+          backgroundColor: Color.fromRGBO(94, 7, 110, 0.863),
         ),
         body: Padding(
           padding: const EdgeInsets.all(15.0),
@@ -104,10 +111,12 @@ class HomePageState extends State<HomePage> {
                 height: 100,
               ),
               contacts.isEmpty
-                  ? Center(child: Text('No Contact yet',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,fontSize: 18,color: Colors.grey
-                    )))
+                  ? Center(
+                      child: Text('No Contact yet',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                              color: Colors.grey)))
                   : Expanded(
                       child: ListView.builder(
                         itemCount: contacts.length,
