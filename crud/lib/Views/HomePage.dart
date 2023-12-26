@@ -1,4 +1,4 @@
-import 'package:crud/Contact.dart';
+import 'package:crud/Model/Contact.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
